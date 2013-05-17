@@ -1,0 +1,5 @@
+.project
+public/captcha/*
+public/users/*
+var/logs/*
+var/users/*
