@@ -1,0 +1,88 @@
+<?php echo $this->doctype() . "\n"; ?>
+<!--[if lt IE 7]>      <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+<?php echo "\t" . $this->headMeta() . "\n"; ?>
+<?php echo "\t" . $this->headTitle() . "\n"; ?>
+<?php echo "\t" . $this->headLink() . "\n"; ?>
+<?php echo "\t" . $this->headScript() . "\n"; ?>
+
+</head>
+<body class="<?php echo $this->bodyClass . ($this->authenticated ? ' logged_in' : ''); ?>">
+<?php
+echo $this->render('header_mypage.phtml');
+
+if (isset($this->messages) && count($this->messages) > 0) {
+?>
+<div id="flash_messages">
+	<ul>
+<?php
+	foreach ($this->messages as $key => $message) {
+?>
+		<li><?php echo $message; ?></li>
+<?php 
+	}	
+?>
+	</ul>
+</div>
+<?php
+}
+
+echo $this->layout()->content;
+
+if (isset($this->socialNetworks['instagram']) && $this->socialNetworks['instagram']['url'] != '') {
+?>
+	<script type="text/javascript">
+		instagram_user_id      = "<?php echo $this->instagramUserId; ?>";
+		instagram_max_photos   = "<?php echo $this->instagramMaxPhotos; ?>";
+		instagram_access_token = "<?php echo $this->instagramAccessToken; ?>";
+	</script>
+
+<?php
+}
+if (isset($this->socialNetworks['facebook'])&& $this->socialNetworks['facebook']['url'] != '') {
+?>
+	<div id="fb-root"></div>
+	<script>
+	(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+<?php
+}
+if (isset($this->socialNetworks['twitter']) && $this->socialNetworks['twitter']['url'] != '') {
+?>
+	<script src="<?php echo $this->baseUrl; ?>/js/vendor/twitter.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	getTwitters('twitter_container', {
+		id: '<?php echo str_replace('https://twitter.com/', '', $this->twitter_username); ?>',
+		count: 6,
+		enableLinks: true,
+		ignoreReplies: false,
+		clearContents: true,
+		template: '<span class="text-time">' +
+				  '<a href="http://twitter.com/<?php echo $this->twitter_username; ?>23" target="_blank">' + 
+				  '@<?php echo $this->twitter_username; ?></a> said (%time%)</span><br>' +
+				  '<span class="text-twitter">%text%</span>'
+	});
+	</script>
+<?php
+}
+if (isset($this->socialNetworks['pinterest'])&& $this->socialNetworks['pinterest']['url'] != '') {
+?>
+<script src="http://assets.pinterest.com/js/pinit.js"></script>
+<?php
+}
+?>
+
+	<script src="<?php echo $this->baseUrl; ?>/js/plugins.js"></script>
+	<script src="<?php echo $this->baseUrl; ?>/js/mypage.js"></script>
+</body>
+</html>

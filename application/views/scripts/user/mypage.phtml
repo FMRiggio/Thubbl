@@ -1,0 +1,187 @@
+<style type="text/css">
+@charset "utf-8";
+<?php
+if (isset($this->background) || isset($this->background_color)) {
+?>
+body {
+<?php
+	if (isset($this->background_color)) {
+?>
+	background-color: <?php echo $this->background_color; ?>;
+<?php
+	}
+	if (isset($this->background)) {
+?>
+    background: url("<?php echo $this->publicUserImagesFolder . $this->background; ?>");
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+<?php
+	}
+}
+?>
+</style>
+<header>
+
+<?php
+if (isset($this->gallery) && count($this->gallery) > 0) {
+?>
+	<div class="slideshow">
+<?php
+	foreach ($this->gallery as $img) {
+		if (is_array($img)) {
+?>
+		<img src="<?php echo $this->publicUserImagesFolder . $img['filename']; ?>">
+<?php
+		}
+	}
+?>
+	</div>
+<?php
+}
+?>
+
+	<div class="bar<?php echo (isset($this->gallery) ? ' with_gallery' : ''); ?>">
+
+<?php
+if (isset($this->logo) && $this->logo != '') {
+?>
+		<img src="<?php echo $this->publicUserImagesFolder . $this->logo['filename']; ?>" class="logo">
+<?php
+}
+?>
+
+<?php
+if (isset($this->user)) {
+	$user = $this->user;
+?>
+		<div class="user_datas clearfix">
+			<h1 class="displayed_name"><?php echo $user['displayed_name']; ?></h1>
+<?php
+	if (isset($user['claim']) && $user['claim'] != '') {
+?>
+			<h2 class="claim"><?php echo $user['claim']; ?></h2>
+<?php
+	}
+?>
+		</div>
+<?php
+}
+
+if (isset($this->socialNetworks)) {
+?>
+		<ul class="social_networks clearfix">
+<?php
+	foreach ($this->socialNetworks as $sn) {
+		if ($sn['url'] != '') {
+?>
+			<li>
+				<a href="<?php echo $sn['url']; ?>" class="<?php echo $sn['kind']; ?>" target="_blank"><?php echo $sn['kind']; ?></a>
+			</li>
+<?php
+		}
+	}
+?>
+		</ul>
+<?php
+}
+?>
+	</div>
+
+</header>
+
+<div id="wrapper" class="clearfix">
+
+<?php
+if ($this->authenticated) {
+	if (count($this->gallery) == 0) {
+?>
+	<p>
+		La tua gallery risulta vuota, perchè non <a href="/user/edit-images">inserisci</a> qualche immagine?
+	</p>
+<?php
+	}
+	if (count($this->socialNetworks) == 0) {
+?>
+	<p>
+		Ehi? Cosa stai facendo? E' una Social Brand Page! Perchè non <a href="/user/edit-social-networks">inserisci</a> qualche social network?
+	</p>
+<?php
+	}
+}
+?>
+	<div class="col left">
+<?php
+if (isset($this->socialNetworks['youtube']) && $this->socialNetworks['youtube']['url'] != '') {
+?>
+
+		<div class="header">
+			<h3>YouTube</h3>
+			<a href="<?php echo $this->socialNetworks['youtube']['url']; ?>" class="link">Guarda tutti i video di <?php echo $user['displayed_name']; ?></a>
+		</div>
+		<div class="youtube">
+			<embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/<?php echo $this->lastVideo; ?>" width="595" height="330" bgcolor="#000000" quality="BEST" wmode="opaque">
+		</div>
+
+<?php
+}
+
+if (isset($this->socialNetworks['facebook']) && $this->socialNetworks['facebook']['url'] != '') {
+?>
+
+		<div class="header">
+			<h3>Facebook</h3>
+			<a href="<?php echo $this->socialNetworks['facebook']['url']; ?>" class="link">Vai alla pagina Facebook</a>
+		</div>
+
+		<div class="fb-like-box" data-href="<?php echo $this->socialNetworks['facebook']['url']; ?>" data-width="595" data-height="595" data-show-faces="false" data-border-color="#FFFFFF" data-stream="true" data-header="false"></div>
+		<div class="fb-comments" data-href="<?php echo $this->baseUrl; ?><?php echo $user['permalink']; ?>" data-num-posts="1" data-width="595"></div>
+
+<?php
+}
+?>
+
+	</div>
+
+	<div class="col right">
+<?php
+if (isset($this->socialNetworks['instagram']) && $this->socialNetworks['instagram']['url'] != '') {
+?>
+
+		<div class="instagram">
+			<div class="header">
+				<h3>Instagram</h3>
+			</div>
+			<div class="instagram_container"></div>
+		</div>
+
+<?php
+}
+
+if (isset($this->socialNetworks['twitter']) && $this->socialNetworks['twitter']['url'] != '') { ?>
+
+		<div class="twitter">
+			<div class="header">
+				<h3>Twitter</h3>
+				<a href="<?php echo $this->socialNetworks['twitter']['url']; ?>" class="link">Tutti i tweet di <?php echo $user['displayed_name']; ?></a>
+			</div>
+			<div id="twitter_container"></div>
+		</div>
+
+<?php
+}
+
+if (isset($this->socialNetworks['pinterest']) && $this->socialNetworks['pinterest']['url'] != '') {
+?>
+
+		<div class="pinterest">
+			<div class="header">
+				<h3>Pinterest</h3>
+			</div>
+			<a data-pin-do="embedUser" href="<?php echo $this->socialNetworks['pinterest']['url']; ?>" data-pin-scale-width="99"></a>
+		</div>
+<?php
+}
+?>
+	</div>
+</div>

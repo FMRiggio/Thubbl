@@ -1,0 +1,24 @@
+<section class="forms clearfix">
+	<div class="activation_form">
+		<h4>Attivazione utente</h4>
+<?php
+if ($this->activate) {
+?>
+		<p>
+			<strong>Utente attivato.</strong><br>
+			Inserisci ora il tuo identificativo su thubbl<br>
+			Ad esempio www.thubbl/<i><strong>identificativo</strong></i>.
+		</p>
+<?php
+	echo $this->form->render();
+} else {
+?>
+		<p>
+			Si è verificato un errore imprevisto, controlla l'indirizzo presente 
+			nell'email oppure contatta l'amministratore del sistema.
+		</p>
+<?php
+}
+?>
+	</div>
+</section>

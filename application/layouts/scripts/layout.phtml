@@ -1,0 +1,32 @@
+<?php echo $this->doctype() . "\n"; ?>
+<!--[if lt IE 7]>      <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<?php echo $this->headMeta() . "\n"; ?>
+
+<!-- Custom metatag because Zend crash with OG metatag and HTML5 doctype -->
+<meta property="og:title" content="Thubbl.com - La tua Social Brand Page">
+<meta property="og:description" content="Thubbl è un hub sociale che ti permette di avere su una sola pagina tutti i tuoi social network.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="<?php echo 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST']; ?>">
+<meta property="og:image" content="<?php echo $this->baseUrl . '/img/thubbl_og.jpg'; ?>">
+<meta property="fb:admins" content="1455937266">
+
+<?php echo $this->headTitle() . "\n"; ?>
+<?php echo $this->headLink() . "\n"; ?>
+<?php echo $this->headScript() . "\n"; ?>
+</head>
+<body class="<?php echo $this->bodyClass; ?>">
+<?php
+
+echo $this->render('header.phtml');
+
+echo "\n" . $this->layout()->content;
+
+?>
+	<script src="<?php echo $this->baseUrl; ?>/js/plugins.js"></script>
+	<script src="<?php echo $this->baseUrl; ?>/js/main.js"></script>
+</body>
+</html>

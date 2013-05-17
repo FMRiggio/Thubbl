@@ -1,0 +1,20 @@
+<header>
+	<div class="wrapper">
+		<h1>
+			<a href="/">
+				<img src="<?php echo $this->baseUrl; ?>/img/thubbl.jpg" id="logo">
+				t<span class="orange">hub</span>bl</a>
+		</h1>
+
+        <div class="nav">
+            <div class="menu">
+                <a href="/#registrazione" class="<?php echo ($this->bodyClass == 'user registration' ? 'active' : ''); ?>">Registrazione</a>
+                <a href="/#login" class="<?php echo ($this->bodyClass == 'user login' ? 'active' : ''); ?>">Login</a>
+                <a href="/#examples" class="<?php echo ($this->bodyClass == 'pages examples' ? 'active' : ''); ?>">Esempi</a>
+                <a href="/#contacts" class="<?php echo (in_array($this->bodyClass, array('pages contacts', 'pages thankyou')) ? 'active' : ''); ?>">Contatti</a>
+                <div class="effect"></div>
+            </div>
+        </div>
+
+	</div>
+</header>

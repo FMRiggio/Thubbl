@@ -1,0 +1,799 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html {
+	height: 100%;
+}
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Ubuntu', Arial, sans-serif;
+}
+header#staging_bar {
+	width: 100%;
+	background: #fff;
+	box-shadow: 3px 3px 5px #333;
+	z-index: 1000;
+	padding: 0;
+}
+	header#staging_bar .wrapper {
+		width: 1020px;
+		height: 90px;
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		padding: 25px 0;
+		text-align: left;
+	}
+		header#staging_bar .wrapper h1 {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			font-family: 'Ubuntu', Arial, sans-serif;
+			font-size: 46px;
+			font-weight: normal;
+			margin: 0;
+		}
+		header#staging_bar .wrapper h1 a {
+			text-decoration: none;
+			color: #000;
+		}
+			header#staging_bar .wrapper h1 .orange {
+				color: #F60;
+				background: -webkit-linear-gradient(#F30, #FF0);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			header#staging_bar .wrapper .nav {
+				position: absolute;
+				right: 0;
+			}
+				header#staging_bar .wrapper .nav .menu {
+					position: relative;
+					width: 700px;
+					overflow: hidden;
+					margin: 0 auto;
+					text-align: center;
+				}
+					header#staging_bar .wrapper .nav .menu a {
+						position: relative;
+						display: block;
+						width: 20%;
+						height: 65px;
+						font-family: 'Ubuntu', Arial, sans-serif;
+						float: left;
+						padding: 1em 0 2em;
+						text-decoration: none;
+						color: #393939;
+						-webkit-transition: .7s;
+						-moz-transition: .7s;
+						-o-transition: .7s;
+						-ms-transition: .7s;
+						transition: .7s;
+					}
+					header#staging_bar .wrapper .nav .menu a.logout {
+						line-height: 40px;
+					}
+					header#staging_bar .wrapper .nav .menu a:hover,
+					header#staging_bar .wrapper .nav .menu a.active {
+						color: #F60;
+					}
+					header#staging_bar .wrapper .nav .menu .effect {
+						position: absolute;
+						left: -10%;
+						-webkit-transition: 0.7s ease-in-out;
+						-moz-transition: 0.7s ease-in-out;
+						-o-transition: 0.7s ease-in-out;
+						-ms-transition: 0.7s ease-in-out;
+						transition: 0.7s ease-in-out;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(1):hover ~ .effect {
+						left: 10% !important;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(2):hover ~ .effect {
+						left: 30% !important;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(3):hover ~ .effect {
+						left: 50% !important;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(4):hover ~ .effect {
+						left: 70% !important;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(5):hover ~ .effect {
+						left: 90% !important;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(1).active ~ .effect {
+						left: 10%;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(2).active ~ .effect {
+						left: 30%;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(3).active ~ .effect {
+						left: 50%;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(4).active ~ .effect {
+						left: 70%;
+					}
+					header#staging_bar .wrapper .nav .menu a:nth-child(5).active ~ .effect {
+						left: 90%;
+					}
+
+					/* ----- dot -----*/
+					header#staging_bar .wrapper .nav .menu:after {
+						position: absolute;
+						bottom: 40px;
+						display: block;
+						width: 100%;
+						height: 1px;
+						content: "";
+						background: #F60;
+					}
+					header#staging_bar .wrapper .nav .menu a:after {
+						position: absolute;
+						bottom: 38px;
+						left: 50%;
+						width: 4px;
+						height: 4px;
+						content: "";
+						margin-left: -2px; 
+						background: #F60;
+						border-radius: 100%;
+					}
+					header#staging_bar .wrapper .nav .menu .effect {
+						width: 10px;
+						height: 10px;
+						bottom: 36px; 
+						margin-left: -5px;
+						background: #F60;
+						border-radius: 100%;
+					}
+/* HEADER */
+header {
+	position: relative;
+	width: 1020px;
+	box-shadow: 0 3px 6px 0 #333333;
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: 100;
+}
+	header .slideshow {
+	    height: 300px;
+	    width: 1020px;
+	    z-index: -99999;
+	}
+	header .bar {
+		width: 1020px;
+		height: 64px;
+		background: url("../widgets/bg_bar.png") repeat;
+	}
+	header .bar.with_gallery {
+		position: absolute;
+		top: 236px;
+	}
+		header .bar .logo {
+			display: block;
+			width: 64px;
+			height: 64px;
+			float: left;
+		}
+	
+		header .bar .user_datas {
+			float: left;
+			margin-left: 10px;
+			padding-top: 7px;
+		}
+		header .bar .displayed_name,
+		header .bar .claim {
+			color: #FFF;
+			margin: 0;
+			padding: 0;
+			font-size: 28px;
+			font-weight: normal;
+			line-height: 26px;
+		}
+		header .bar .claim {
+			font-size: 16px;
+			font-weight: normal;
+		}
+		header .bar .social_networks {
+			float: right;
+			height: 49px;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			padding-top: 13px;
+		}
+			header .bar .social_networks li {
+				float: left;
+				margin-right: 5px;
+			}
+				header .bar .social_networks li a {
+					display: block;
+					width: 40px;
+					height: 40px;
+					background: url("../widgets/social-icons-sprite.png") no-repeat;
+					text-indent: -99999px;
+				}
+					header .bar .social_networks li a.facebook {
+						background-position: -132px 0;
+					}
+					header .bar .social_networks li a.twitter {
+						background-position: -174px 0;
+					}
+					header .bar .social_networks li a.instagram {
+						background-position: -44px 0;
+					}
+					header .bar .social_networks li a.youtube {
+						background-position: -480px  0;
+					}
+					header .bar .social_networks li a.gplus {
+						background-position: -218px 0;
+					}
+					header .bar .social_networks li a.foursquare {
+						background-position: 0 0;
+					}
+					header .bar .social_networks li a.pinterest {
+						background-position: -350px 0;
+					}
+					header .bar .social_networks li a.flickr {
+						background-position: -261px 0;
+					}
+					header .bar .social_networks li a.feed {
+						background-position: -305px 0;
+					}
+/* CONTENT */
+#wrapper {
+	width: 950px;
+	background-color: #FFFFFF;
+	box-shadow: 0 3px 6px 0 #333333;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 20px 35px;
+}
+#wrapper a {
+	color: #09F;
+	text-decoration: none;
+}
+	#wrapper .col {
+		float: left;
+	}
+	#wrapper .col.left {
+		width: 595px;
+	}
+	#wrapper .col.right {
+		width: 320px;
+		float: right;
+	}
+
+	#wrapper .col .header {
+		width: 100%;
+		height: 35px;
+		padding-top: 10px;
+	}
+		#wrapper .col .header h3 {
+			width: 50%;
+			float: left;
+			color: #333;
+			font-size: 20px;
+			font-weight: normal;
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper .col .header .link {
+			width: 50%;
+			display: block;
+			float: right;
+			color: #09F;
+			margin: 0;
+			padding: 7px 0 0 0;
+			font-size: 13px;
+			text-decoration: none;
+			text-align: right;
+		}
+		#wrapper .youtube {
+			height: 350px;
+			background: url("../widgets/video-shadow.png") no-repeat;
+			background-position: -6px 303px;
+		}
+		#wrapper .instagram .header {
+			width: 320px;
+		}
+		#wrapper .instagram .instagram_container { 
+			height: 350px;
+			margin-left: -10px;
+		}
+		#wrapper .instagram-placeholder {
+			float:left;
+			margin: 0 0 10px 10px;
+		}
+		.instagram-placeholder a img {
+			height: 98px;
+			width: 98px;
+			border: 1px #CCC solid;
+		}
+		#twitter_container ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+		#twitter_container ul li {
+			background-color: #EEEEEE;
+		    border-bottom: 1px dashed #CCCCCC;
+		    margin-bottom: 12px;
+		    padding: 5px;
+		}
+		#twitter_container ul li a {
+			color: #09F;
+		}
+
+/* FORM EDITING */
+.forms {
+	width: 840px;
+	margin: 0 auto;
+	padding: 20px 0 20px 80px;
+}
+	.forms ul.error,
+	.forms ul.errors {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 12px;
+		color: #C00;
+	}
+	.forms ul.error {
+		font-size: 16px;
+	}
+	.forms h4 {
+		height: 25px;
+		line-height: 25px;
+		font-family: 'Ubuntu', Arial, sans-serif;
+		font-size: 25px;
+		margin: 0;
+		font-weight: normal;
+		color: #000;
+		margin-bottom: 15px;
+	}
+	.column {
+		width: 50%;
+		float: left;
+	}
+	.forms.image .column {
+		margin-bottom: 15px;
+	}
+	.forms.image .column.image2 {
+		height: 120px;
+	}
+		.forms .column.image1 .placeholder {
+			position: relative;
+			float: left;
+			height: 100px;
+			margin: 0;
+			margin-right: 10px;
+		}
+			.forms .column.image1 .placeholder img {
+				max-width: 100px;
+				max-height: 100px;
+			}
+			.forms .column.image1 .placeholder .delete_image_link,
+			.forms .column.image2 .placeholder .delete_image_link {
+				position: absolute;
+				display: block;
+				top: 5px;
+				left: 5px;
+				width: 11px;
+				height: 13px;
+				color: #C00;
+				z-index: 20;
+				text-decoration: none;
+				font-size: 17px;
+				line-height: 12px;
+				background: #FFF;
+				border-radius: 9px;
+				text-align: left;
+				padding-left: 3px;
+			}
+		.forms .column.image2 .placeholder {
+			position: relative;
+			float: left;
+			margin: 0;
+			margin-right: 10px;
+		}
+			.forms .column.image2 .placeholder img {
+				max-width: 200px;
+			}
+		.forms .field_content label {
+			position: relative;
+			display: block;
+			font-family: 'Ubuntu', Arial, sans-serif;
+			font-size: 16px;
+		}
+			.forms .field_content label .ico {
+				display: block;
+				float: left;
+				width: 15px;
+				height: 20px;
+				margin-right: 5px;
+			}
+			.forms .field_content label .ico:hover {
+				cursor: pointer;
+			}
+			.forms .field_content label .help {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-size: 10px;
+				padding: 3px;
+				background: #F60;
+				color: #FFF;
+				box-shadow: 0 0 5px #000;
+			}
+		.forms .field_content {
+			margin: 0 15px 15px 0;
+		}
+		.forms .field_content.image {
+			margin: 0;
+			float: left;
+			width: 260px;
+		}
+			.forms .field_content p {
+				margin: 0;
+			}
+			.forms .field_content input {
+				width: 297px;
+				border: 1px #CCC solid;
+				padding-left: 3px;
+			}
+			.forms .field_content input[type=file] {
+				float: left;
+				border: none;
+				padding: 0;
+			}
+
+		.forms #fieldset-consensi {
+			width: 722px;
+			margin-top: 15px;
+		}
+			.forms #fieldset-consensi p.hint {
+				margin: 0;
+			}
+			.forms #fieldset-consensi #privacy-label {
+				font-size: 12px;
+				font-family: 'Ubuntu', Arial, sans-serif;
+			}
+			.forms #fieldset-consensi input[type=radio] {
+				width: 20px;
+			}
+				.forms #fieldset-consensi .button {
+					width: 300px;
+					text-align: right;
+					float: right;
+				}
+				.forms.image #fieldset-consensi .button {
+					width: auto;
+					margin-left: 15px;
+				}
+					.forms #fieldset-consensi #Invia,
+					.forms #fieldset-consensi #Invia_Prosegui {
+						width: 90px;
+						height: 30px;
+						background: url(../widgets/arrow.jpg) #F60 left no-repeat;
+						padding-left: 14px;
+						color: #FFF;
+						font-size: 22px;
+						line-height: 18px;
+						padding: 6px 5px 7px 14px;
+						font-family: 'Ubuntu', Arial, sans-serif;
+						border: none;
+					}
+					.forms #fieldset-consensi #Invia_Prosegui {
+						width: 210px;
+					}
+
+#flash_messages {
+	position: relative;
+	display: block;
+	width: 770px;
+	margin: 0 auto;
+	padding: 20px 0 20px 20px;
+	text-align: left;
+	background: #F0BF8B;
+	color: #000;
+	text-shadow: 1px 1px #FFF;
+	border-radius: 5px;
+	margin-top: 10px;
+	border: 1px #F60 solid;
+}
+	#flash_messages ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

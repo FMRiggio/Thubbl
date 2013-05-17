@@ -1,0 +1,68 @@
+<div class="previews">
+    <img src="<?php echo $this->baseUrl; ?>/img/preview_barilla.jpg">
+    <img src="<?php echo $this->baseUrl; ?>/img/preview_jeep.jpg">
+    <img src="<?php echo $this->baseUrl; ?>/img/preview_barackobama.jpg">
+</div>
+
+<section class="descriptions clearfix">
+	<div class="box" id="box1">
+		<span class="ico entypo-network"></span>
+		<h2>Che cosa è?</h2>
+		<h3><strong>Thubbl</strong> è un hub sociale...</h3>
+		<p class="text" id="testo_box1">
+			che ti permette di avere su una sola pagina tutti i tuoi social network.<br>
+			Prova a vedere alcuni <a href="#examples">esempi</a>.
+		</p>
+	</div>
+	<div class="box" id="box2">
+		<span class="ico entypo-cog"></span>
+		<h2>Come funziona?</h2>
+		<h3>Tu inserisci i tuoi social network...</h3>
+		<p class="text" id="testo_box2">
+			Thubbl fa il resto.
+			Con una grafica accattivamente per il tuo social hub.
+		</p>
+	</div>
+	<div class="box" id="box3">
+		<span class="ico entypo-user-add"></span>
+		<h2>Iscriviti</h2>
+		<h3><a href="#registrazione">Registrati</a> e inizia a creare...</h3>
+		<p class="text" id="testo_box3">
+			il tuo canale sociale.
+		</p>
+	</div>
+</section>
+
+<div class="separator"></div>
+
+<section class="forms clearfix">
+	<div class="registration_form" id="registrazione">
+		<h4>Registrazione</h4>
+<?php echo $this->registrationForm->render(); ?>
+	</div>
+
+	<div class="login_form clearfix" id="login">
+		<h4>Login</h4>
+<?php echo $this->loginForm->render(); ?>
+		<a href="/user/remember-password" class="link">Hai dimenticato la password?</a>
+	</div>
+</section>
+
+<div class="separator"></div>
+
+<section class="box_examples clearfix" id="examples">
+	<h4>Esempi</h4>
+	<a href="/barilla" class="box first"><img src="<?php echo $this->baseUrl; ?>/img/anteprima_barilla.jpg"></a>
+	<a href="/jeep" class="box"><img src="<?php echo $this->baseUrl; ?>/img/anteprima_jeep.jpg"></a>
+	<a href="/barack-obama" class="box"><img src="<?php echo $this->baseUrl; ?>/img/anteprima_barackobama.jpg"></a>
+	<small>* Quelli che vedete qui sopra sono solo alcuni esempi. I brand non sono stati coinvolti in alcun caso nella realizzazione di queste pagine.</small>
+</section>
+
+<div class="separator"></div>
+
+<section class="forms clearfix" id="contacts">
+	<div class="contacts_form">
+		<h4>Contatti</h4>
+<?php echo $this->contactsForm->render(); ?>
+	</div>
+</section>

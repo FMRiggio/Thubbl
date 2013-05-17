@@ -1,0 +1,35 @@
+<?php echo $this->render('email_template/email_header.phtml'); ?>
+<tr id="simple-content-row">
+	<td class="w640" width="640" bgcolor="#ffffff">
+		<table class="w640" width="640" cellpadding="0" cellspacing="0" border="0">
+			<tbody>
+				<tr>
+					<td class="w30" width="30"></td>
+					<td class="w580" width="580">
+						<table class="w580" width="580" cellpadding="0" cellspacing="0" border="0">
+							<tbody>
+								<tr>
+									<td class="w580" width="580">
+										<p align="left" class="article-title" style="font-size: 14px; font-weight: bold; color: #FF6600;"><?php echo $this->title; ?></p>
+										<div align="left" class="article-content">
+											Nome: <strong><?php echo $this->first_name; ?></strong><br>
+											Cognome: <strong><?php echo $this->last_name; ?></strong><br>
+											Email: <strong><?php echo $this->email; ?></strong><br>
+											Richiesta: <br>
+											<strong><?php echo $this->request; ?></strong>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="w580" width="580" height="10"></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td class="w30" width="30"></td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
+<?php echo $this->render('email_template/email_footer.phtml'); ?>

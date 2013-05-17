@@ -1,0 +1,22 @@
+<?php if ($this->authenticated) { ?>
+<header id="staging_bar">
+	<div class="wrapper">
+		<h1>
+			<a href="/">
+				<img src="<?php echo $this->baseUrl; ?>/img/thubbl.jpg" id="logo">
+				t<span class="orange">hub</span>bl</a>
+		</h1>
+
+        <div class="nav">
+            <div class="menu">
+                <a href="/user/mypage"<?php echo ($this->currentPage == 'user_mypage' ? ' class="active"' : ''); ?>>Your<br>Thubbl</a>
+                <a href="/user/edit-data"<?php echo ($this->currentPage == 'user_edit-data' ? ' class="active"' : ''); ?>>Modifica<br>dati</a>
+                <a href="/user/edit-images"<?php echo ($this->currentPage == 'user_edit-images' ? ' class="active"' : ''); ?>>Modifica<br>immagini</a>
+                <a href="/user/edit-social-networks"<?php echo ($this->currentPage == 'user_edit-social-networks' ? ' class="active"' : ''); ?>>Modifica<br>social networks</a>
+                <a href="/user/logout" class="logout">Logout</a>
+                <div class="effect"></div>
+            </div>
+        </div>
+	</div>
+</header>
+<?php } ?>
